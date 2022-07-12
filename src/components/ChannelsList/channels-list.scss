@@ -1,0 +1,24 @@
+@use '../../scss/abstracts/' as *;
+@use 'sass:math';
+
+.channels-list {
+    & > * ~ * {
+        margin-top: math.div($spacing, 2);
+    }
+
+    &__item {
+        &__title {
+            @include flex(center, space-between);
+            font-size: $fontSizeMedium;
+            margin-bottom: math.div($spacing, 6);
+
+            &__icon-label {
+                @include flex(center, space-between);
+            }
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+}

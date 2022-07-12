@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './assets/libs/boxicons-2.1.1/css/boxicons.min.css'
+import './scss/App.scss'
+import { Blank, Orders, Products } from './pages'
+import MainLayout from './layout/MainLayout'
+import Dashboard from './pages/Dashboard'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<MainLayout/>}>
+                    <Route index element={<Dashboard/>}/>
+                    <Route path='orders' element={<Orders />}/>
+                    <Route path='products' element={<Products />}/>
+                    <Route path='customers' element={<Blank/>}/>
+                    <Route path='stats' element={<Blank/>}/>
+                    <Route path='calendar' element={<Blank/>}/>
+                    <Route path='inbox' element={<Blank/>}/>
+                    <Route path='settings' element={<Blank/>}/>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
-export default App;
+export default App

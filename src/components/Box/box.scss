@@ -1,0 +1,30 @@
+@use '../../scss/abstracts/' as *;
+
+.box {
+    padding: 20px 30px;
+    border-radius: $boxRadius;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-color: $mainBg;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    &-purple {
+        background-color: $purple;
+        color: $white;
+    }
+
+    &-fullheight {
+        height: calc(100% - $spacing);
+
+        @include tablet {
+            height: calc(100% - $mobileSpacing);
+        }
+    }
+
+    &-autowidth {
+        width: calc(100% + $spacing);
+
+        @include tablet {
+            width: calc(100% - $mobileSpacing);
+        }
+    }
+}

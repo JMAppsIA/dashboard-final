@@ -1,0 +1,40 @@
+@use '../../scss/abstracts' as *;
+
+.dashboard-wrapper {
+    @include flex(stretch);
+    scroll-behavior: smooth;
+    
+    @include tablet {
+        flex-direction: column;
+    }
+
+    &__main {
+        flex-grow: 1;
+        // padding-right: $mainContentRightWidth;
+
+        @include tablet {
+            padding-right: 0;
+        }
+    }
+
+    &__right {
+        width: $mainContentRightWidth;
+        // background-color: $mainBg;
+        height: 100vh;
+        // padding: $spacing;
+        // border-top-left-radius: $borderRadius;
+        // border-bottom-left-radius: $borderRadius;
+        // border-radius: $borderRadius;
+        // position: fixed;
+        // top: 0;
+        // right: 0;
+
+        @include tablet {
+            flex-direction: column;
+            margin-top: $mobileSpacing;
+            width: 100%;
+            height: max-content;
+        }
+
+    }
+}
