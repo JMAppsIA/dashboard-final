@@ -30,7 +30,6 @@ ChartJS.register(
 );
 
 const SummaryBox = ({ item }) => {
-  const { percent } = item;
   return (
     <Box>
       <div className="summary-box">

@@ -8,7 +8,7 @@ const ChangingProgressProvider = ({values, interval=1000, children}) => {
     setInterval(() => {
         setValuesIndex((valuesIndex+1) % values.length);
     })
-  }, [values.length, setInterval])
+  }, [])
   
 
   return children(values[valuesIndex]);

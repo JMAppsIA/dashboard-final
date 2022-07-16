@@ -14,3 +14,21 @@ export const DashboardWrapperMain = ({ children }) => {
 export const DashboardWrapperRight = ({ children }) => {
   return <div className="dashboard-wrapper__right">{children}</div>;
 };
+
+export const DashboardHeader = ({icon, title, subtitle}) => {
+  return (
+    <div className="dashboard-header-wrapper">
+      <div className="dashboard-header-heading">
+        <div className="dashboard-header-icon">
+          <i className={`bx bx-${icon}`}/>
+        </div>
+        <div>
+          {title}
+          <div className="dashboard-header-subheading">
+            {subtitle}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

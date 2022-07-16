@@ -15,6 +15,7 @@ import ChannelsList from "../components/ChannelsList/ChannelsList";
 import DashboardWrapper, {
   DashboardWrapperMain,
   DashboardWrapperRight,
+  DashboardHeader,
 } from "../components/DashboardWrapper/DashboardWrapper";
 import SummaryBox, {
   SummaryBoxSpecial,
@@ -34,6 +35,15 @@ ChartJS.register(
 const Dashboard = () => {
   return (
     <DashboardWrapper>
+      <div className="row">
+        <div className="col-12 col-md-12">
+          <DashboardHeader
+            icon={`home`}
+            title={`Dashboard`}
+            subtitle={`This is an example dashboard created using build-in elements and components.`}
+          />
+        </div>
+      </div>
       <div className="row">
         <div className="col-8 col-md-12">
           <DashboardWrapperMain>
