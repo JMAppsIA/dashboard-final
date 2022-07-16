@@ -3,7 +3,7 @@ import { DashboardHeader } from "../components/DashboardWrapper/DashboardWrapper
 import TableWrapper from "../components/TableWrapper/TableWrapper";
 import { orders } from "../constants";
 const Orders = () => {
-  const [itemsPerPage, setItemsPerPage] = useState(10); 
+  const [itemsPerPage] = useState(10); 
   const [currentPage, setCurrentPage] = useState(1);
 
   //Get current items
@@ -20,7 +20,7 @@ const Orders = () => {
             title={`Orders  `}
             subtitle={`This is an example dashboard created using build-in elements and components.`}
           />
-    <TableWrapper itemsPerPage={itemsPerPage} items={orders}>
+    <TableWrapper itemsPerPage={itemsPerPage} items={orders} setCurrentPage={setCurrentPage}>
       <table>
         <thead>
           <tr className="table100-head">
