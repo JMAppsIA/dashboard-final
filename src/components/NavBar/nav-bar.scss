@@ -8,6 +8,8 @@
         margin-bottom: $mobileSpacing;
     }
 
+    padding: 10px 0px;
+
     &__items {
         @include flex(center, flex-end);
         height: 100%;

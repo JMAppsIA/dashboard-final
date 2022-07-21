@@ -1,0 +1,19 @@
+@use "../../scss/abstracts/" as *;
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  outline: none;
+  text-decoration: none;
+  transition: 0.3s;
+  vertical-align: baseline;
+  align-items: center;
+  justify-content: center;
+  @include flex(center, center);
+  color: $white;
+  border: none;
+}
+.radius {
+  border-radius: 10px;
+}

@@ -1,0 +1,79 @@
+@use "../../scss/abstracts/" as *;
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.black {
+  font-weight: 900;
+}
+.blackItalic {
+  font-weight: 900;
+  font-style: italic;
+}
+.bold {
+  font-weight: 700;
+}
+.boldItalic {
+  font-weight: 700;
+  font-style: italic;
+}
+.heavy {
+  font-weight: 800;
+}
+.heavyItalic {
+  font-weight: 800;
+  font-style: italic;
+}
+.light {
+  font-weight: 300;
+}
+.lightItalic {
+  font-weight: 300;
+  font-style: italic;
+}
+.medium {
+  font-weight: 500;
+}
+.mediumItalic {
+  font-weight: 500;
+  font-style: italic;
+}
+.regular {
+  font-weight: 400;
+}
+.regularItalic {
+  font-weight: 400;
+  font-style: italic;
+}
+.semi {
+  font-weight: 600;
+}
+.semiItalic {
+  font-weight: 600;
+  font-style: italic;
+}
+.thin {
+  font-weight: 100;
+}
+.thinItalic {
+  font-weight: 100;
+  font-style: italic;
+}
+.extraLight {
+  font-weight: 200;
+}
+.extraLightItalic {
+  font-weight: 200;
+  font-style: italic;
+}
+
+.title {
+  font-size: 20px;
+}
+.body1 {
+  font-size: 18px;
+}
+.body2 {
+  font-size: 16px;
+}

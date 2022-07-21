@@ -3,11 +3,12 @@
 .dashboard-wrapper {
     // @include flex(stretch);
     scroll-behavior: smooth;
-
+    padding: 0px $spacing;
 
     
     @include tablet {
         flex-direction: column;
+        padding: 0px;
     }
 
     &__main {
@@ -90,4 +91,22 @@
     @include tablet {
         display: none;
     }
+}
+
+.dashboard-body {
+    @include flex(stretch);
+    position: relative;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    // background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(26,54,126,.125);
+    border-radius: 0.25rem;
+    // box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%), 0 0.9375rem 1.40625rem rgb(4 9 20 / 3%), 0 0.25rem 0.53125rem rgb(4 9 20 / 5%), 0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
+    border-width: 0;
+    transition: all .2s;
+    // padding: 30px 30px;
+    // flex: 1;
+    // margin: 30px 30px 30px;
 }

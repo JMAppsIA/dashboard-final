@@ -1,24 +1,70 @@
 @use "../../scss/abstracts/" as *;
 
 .pagination-container {
-  @include flex(center, end);
+  @include flex(center, center);
   flex-direction: row;
 }
 
+.pagination {
+  @include flex(center, center);
+  margin: 2px 0;
+  white-space: nowrap;
+
+  &-info {
+    white-space: nowrap;
+  }
+
+  &-label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: $black;
+
+    &-touchable {
+      cursor: pointer;
+    }
+
+    &-disabled {
+      pointer-events: none; 
+    }
+  }
+  
+  &-wrapper {
+    align-items: center;
+    align-content: space-between;
+  }
+}
+
 .pagination-number {
-    --size: 32px;
-  --margin: 6px;
-  margin: 0 var(--margin);
-  border-radius: 6px;
-  background: #202020;
-  max-width: auto;
-  min-width: var(--size);
-  height: var(--size);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(center, center);
+  padding: 8px 9px;
+  gap: 4px;
+  width: 31px;
+  height: 31px;
+  background: #e9ecef;
+  border-radius: 8px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
   cursor: pointer;
-  padding: 0 6px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: $black;
+  margin-right: 12px;
+  &:hover {
+    background-color: $mainColor;
+    color: $white;
+    z-index: 2;
+    text-decoration: none;
+  }
+  &-active {
+    background-color: $mainColor;
+    color: $white;
+    z-index: 2;
+    text-decoration: none;
+  }
   @include tablet {
     &:hover {
       background: lighten(#202020, 3%);
@@ -29,7 +75,32 @@
   }
 }
 
-.pagination-active {
-    background: lighten(#202020, 3%);
-    position: relative;
+.pagination-input {
+  @include flex(center, center);
+  padding: 8px 9px;
+  gap: 4px;
+  width: 31px;
+  height: 31px;
+  background: #e9ecef;
+  border-radius: 8px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  // cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: $black;
+  margin-right: 12px;
+  @include tablet {
+    &:hover {
+      background: lighten(#202020, 3%);
+    }
   }
+}
+
+.pagination-active {
+  background: lighten(#202020, 3%);
+  position: relative;
+}
