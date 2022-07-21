@@ -16,6 +16,7 @@ import {
 } from "react-circular-progressbar";
 import { colors } from "../../constants";
 import Box from "../Box/Box";
+import Text from "../Text/Text";
 import ChangingProgressProvider from "../ProgressBar/ChangingProgressProvider";
 import "./summary-box.scss";
 
@@ -35,8 +36,14 @@ const SummaryBox = ({ item }) => {
       <div className="summary-box">
         <div className="summary-box__info">
           <div className="summary-box__info__title">
-            <div>{item.title}</div>
-            <span>{item.subtitle}</span>
+            <Text bold title>
+              {item.title}
+            </Text>
+            <Text medium size={14}>
+              {item.subtitle}
+            </Text>
+            {/* <div>{item.title}</div>
+            <span>{item.subtitle}</span> */}
           </div>
           <div className="summary-box__info__value">{item.value}</div>
         </div>
@@ -103,8 +110,12 @@ export const SummaryBoxSpecial = ({ item }) => {
   return (
     <Box fullHeight>
       <div className="summary-box-special">
-        <div className="summary-box-special__title">{item.title}</div>
-        <div className="summary-box-special__body">{item.value}</div>
+        <Text bold title>
+          {item.title}
+        </Text>
+        <Text semi title>
+          {item.value}
+        </Text>
         <div className="summary-box-special__footer">
           <Line options={chartOptions} data={chartData} width={`250px`} />
         </div>

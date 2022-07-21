@@ -21,11 +21,8 @@
             font-size: $fontSizeMedium;
             font-weight: 700;
             line-height: 1.2;
-
-            span {
-                font-size: 13px;
-                font-weight: 400;
-            }
+            @include flex(flex-start, space-between);
+            flex-direction: column;
         }
 
         &__vaue {
@@ -40,16 +37,6 @@
     @include flex(center, space-between);
     flex-direction: column;
     height: 100%;
-
-    &__title {
-        font-weight: 700;
-        font-size: $fontSizeMedium;
-    }
-
-    &__body {
-        font-size: $fontSizeLarge;
-        font-weight: 700;
-    }
 
     &__footer {
         width: calc(100%);
