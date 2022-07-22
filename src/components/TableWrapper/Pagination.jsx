@@ -20,7 +20,7 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, paginate }) => {
         <span
           onClick={() => paginate(currentPage - 1)}
           className={`pagination-label ${
-            currentPage <= 1 ? `pagination-label-disabled` : ``
+            currentPage <= 1 ? `pagination-label-disabled` : `pagination-label-touchable`
           }`}
         >
           Prev
@@ -94,7 +94,7 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, paginate }) => {
           className={`pagination-label ${
             currentPage === pageNumbers.length
               ? `pagination-label-disabled`
-              : ``
+              : `pagination-label-touchable`
           }`}
           onClick={() => paginate(currentPage + 1)}
         >

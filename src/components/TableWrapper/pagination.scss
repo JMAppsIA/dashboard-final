@@ -22,10 +22,12 @@
 
     &-touchable {
       cursor: pointer;
+      color: $mainColor;
     }
 
     &-disabled {
-      pointer-events: none; 
+      pointer-events: none;
+      color: $gray0;
     }
   }
   

@@ -13,6 +13,8 @@ const TableWrapper = ({
   setItemsPerPage,
   currentPage,
   setCurrentPage,
+  buttonTitle,
+  toggleNewModal
 }) => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -43,7 +45,7 @@ const TableWrapper = ({
             <Text medium align={`center`} size={14}> rows</Text>
           </div>
           <div className="table-header-right-side">
-            <Button sm radius>Create Thing</Button>
+            <Button sm radius onClick={toggleNewModal}>{buttonTitle}</Button>
           </div>
         </div>
         <div className="table-wrapper">{children}</div>

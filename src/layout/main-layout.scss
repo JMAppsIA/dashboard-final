@@ -2,7 +2,7 @@
 
 .main {
     padding-left: $sideBarWidth;
-    overflow-x: hidden;
+    overflow: hidden;
 
     @include tablet {
         padding-left: 0;

@@ -33,8 +33,6 @@ export const DashboardHeader = ({ icon, title, subtitle }) => {
 
 export const DashboardBody = ({ children }) => {
   return (
-    <div className="dashboard-wrapper">
       <div className="dashboard-body mb">{children}</div>
-    </div>
   );
 };
