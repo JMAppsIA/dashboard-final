@@ -3,16 +3,26 @@ import DashboardWrapper, {
   DashboardHeader,
   DashboardBody,
 } from "../components/DashboardWrapper/DashboardWrapper";
+import Modal from "../components/Modal/Modal";
 import TableWrapper from "../components/TableWrapper/TableWrapper";
+import Toast from "../components/Toast/Toast";
 import { orders } from "../constants";
 const Orders = () => {
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showNewModal, setShowNewModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [openToast, setOpenToast] = useState(false);
 
   //Get current items
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = orders.slice(indexOfFirstItem, indexOfLastItem);
+
+  const toggleNewModal = () => {
+    document.documentElement.style.overflowY = `hidden`;
+    setShowNewModal(true);
+  };
 
   return (
     <DashboardWrapper>
@@ -28,6 +38,8 @@ const Orders = () => {
           items={orders}
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
+          buttonTitle={`Add new Order`}
+          toggleNewModal={toggleNewModal}
         >
           <table>
             <thead>
@@ -39,6 +51,7 @@ const Orders = () => {
                 <th className="column5">Price</th>
                 <th className="column6">Quantity</th>
                 <th className="column7">Total</th>
+                <th className="column8">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -65,12 +78,58 @@ const Orders = () => {
                   <td key={`column7`} className={`column7`}>
                     {order.total}
                   </td>
+                  <td key={`column8`} className={`column8`}>
+                    <button
+                      className="table-btn"
+                      onClick={() => {
+                        console.log(index);
+                        document.documentElement.style.overflowY = `hidden`;
+                        setShowEditModal(true);
+                      }}
+                    >
+                      <i className="bx bx-pencil table-edit-icon" />
+                    </button>
+                    <button className="table-btn">
+                      <i className="bx bx-trash-alt table-delete-icon" />
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </TableWrapper>
       </DashboardBody>
+      {showNewModal && (
+        <Modal
+          key={`newOrderModal`}
+          title={`New thing`}
+          setOpenModal={setShowNewModal}
+          handleClick={() => {
+            document.documentElement.removeAttribute("style");
+            setShowNewModal(false);
+            setOpenToast(true);
+          }}
+        />
+      )}
+      {showEditModal && (
+        <Modal
+          key={`editOrderModal`}
+          title={`Edit thing`}
+          setOpenModal={setShowEditModal}
+          handleClick={() => {
+            document.documentElement.removeAttribute("style");
+            setShowEditModal(false);
+            setOpenToast(true);
+          }}
+        />
+      )}
+      {openToast && (
+        <Toast
+          setOpenToast={setOpenToast}
+          type={`success`}
+          orientation={`bottom-right`}
+        />
+      )}
     </DashboardWrapper>
   );
 };

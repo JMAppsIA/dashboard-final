@@ -23,6 +23,7 @@ const Button = ({
   transparent,
   borderColor,
   textColor,
+  onClick
 }) => {
   const className = {
     xs: xs && "xs",
@@ -53,6 +54,7 @@ const Button = ({
         height: xs ? 40 : sm ? 43 : md ? 44 : l ? 55 : xl ? 57.75 : 44,
         backgroundColor: bgColor || `#696CFF`
       }}
+      onClick={onClick}
     >
       {children}
     </button>
